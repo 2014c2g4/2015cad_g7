@@ -1,3 +1,3 @@
-
+# 第二週課程
 
 各組工作項目: 了解課程評分除平時表現(20%), 期中(末)報告(30%)外, 期中(末)考週前兩次線上考試(50%). 組長至課程網誌 http://wordpress-2015course.rhcloud.com, 註冊後 (例如, 各班第1組以 2015cdb_g1 或 2015cda_g1 當作帳號, 其餘各組類推), 檢查是否被轉為 author, 自本週起, 將每週工作進度回報, 以各組對應類別, 回報至課程網誌. 確認各組組長是否可在電子書 http://coursemde.gitbooks.io/2015cd/ (甲班)或 http://coursemde.gitbooks.io/2015cdb/ (乙班) 上執行編輯, 各組的期中(末)報告必須直接在此電子書上編寫. 了解各班的 gitbook 電子書除同步到 github 對應倉儲外, 各組的專案管理將使用 https://waffle.io/, 透過 github 倉儲的 issues 功能加以整合, 並採用 Scrum 架構執行協同專案. (各組組長連結至 waffle.io 後, 以 Github 帳號登入後, 納入各組 Github 倉儲後, 即可開始透過 issues 功能進行專案管理), 例如: 2015cd waffle.io 專案連結, https://waffle.io/coursemdetw/2015cd 了解與 https://github.com/coursemdetw/2015cd.git (甲班倉儲)對應的 OpenShift … Continue reading CD 第2週工作項目
