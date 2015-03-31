@@ -1,3 +1,10 @@
 # First Chapter
 
-GitBook allows you to organize your book into chapters, each chapter is stored in a separate file like this one.
+**電腦協同產品設計實習**
+
+第七組
+
+組長:黃道明
+
+組員:林家豪.楊承翰.黃柏學.丁軍華.施翔智.詹翔安
+
