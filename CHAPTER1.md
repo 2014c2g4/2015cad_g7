@@ -1,6 +1,5 @@
 # First Chapter
 
-GitBook allows you to organize your book into chapters, each chapter is stored in a separate file like this one.
  協同專案執行範例
 
 這是一個包含 scrumaster, product-owner, scrum-1, scrum-2, scrum-3, scrum-4 等六位組員的協同產品開發團隊, 目前希望能夠在 4/8 之前完成專案一.
