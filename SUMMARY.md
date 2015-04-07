@@ -11,5 +11,5 @@
 * [協同產品設計實習課堂考試](class test.md)
 * [Q&A](q&a.md)
 * [完成規劃內容(第一階段)](Giant one.md)
-* 需求功能的簡介
+* [需求功能的簡介](Giant EX.md)
 
