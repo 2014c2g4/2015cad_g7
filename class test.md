@@ -31,6 +31,12 @@
 參考資料:
 
 2014 年 Fall 電腦輔助設計實習第十六週課程內容: https://140.130.17.9:8443/?id=660 (正齒輪減速機網際電腦輔助設計運算, Creo 3D 參數 Pro/Web.Link 程式)
-2014cadp_w16b 專案檔: on Copy.com: https://copy.com/lPRwb2vGYMyfRncX
-2015Scrum Project 網誌: https://wordpress-productownermde.rhcloud.com/
+
+2014cadp_w16b 專案檔: 
+
+on Copy.com: https://copy.com/lPRwb2vGYMyfRncX
+2015Scrum 
+
+Project 網誌: https://wordpress-productownermde.rhcloud.com/
+
 2015Scrum Project 倉儲: https://github.com/product-owner/2015scrum
