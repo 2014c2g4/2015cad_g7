@@ -15,5 +15,5 @@
 * [功能一的細節(第二階段)](Giant-2.md)
 * [功能二的細節(第三階段)](Giant-3.md)
 * [功能三的細節(第四階段)](Giant-4.md)
-* Gitbook 上與 Github 同步(第五步驟)
+* [Gitbook 上與 Github 同步(第五步驟)](Giant-5.md)
 
