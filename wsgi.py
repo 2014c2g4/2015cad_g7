@@ -504,7 +504,7 @@ class Hello(object):
     #@+node:.20150428191028.1815: *3* mygeartest2
     @cherrypy.expose
     # N 為齒數, M 為模數, P 為壓力角
-    def mygeartest2(self , M=5, P=15,N1=20, N2=20,N3=20,N4=20,N5=20 ):
+    def mygeartest2(self , M=15, P=15,N1=7, N2=9,N3=11,N4=13,N5=15 ,N6=17):
         outstring = '''
     <!DOCTYPE html> 
     <html>
@@ -525,6 +525,7 @@ class Hello(object):
     齒輪3齒數:<input type=text name=N3><br />
     齒輪4齒數:<input type=text name=N4><br />
     齒輪5齒數:<input type=text name=N5><br />
+    齒輪6齒數:<input type=text name=N6><br />
     <input type=submit value=send>
     </form>
 
@@ -559,13 +560,15 @@ class Hello(object):
     n_g4 = '''+str(N4)+'''
     # 第5齒輪齒數
     n_g5 = '''+str(N5)+'''
-
+    # 第5齒輪齒數
+    n_g6 = '''+str(N6)+'''
     # 計算兩齒輪的節圓半徑
     rp_g1 = m*n_g1/2
     rp_g2 = m*n_g2/2
     rp_g3 = m*n_g3/2
     rp_g4 = m*n_g4/2
     rp_g5 = m*n_g5/2
+    rp_g6 = m*n_g6/2
     # 繪圖第1齒輪的圓心座標
     x_g1 = 200
     y_g1 = 200
@@ -581,6 +584,9 @@ class Hello(object):
     # 第5齒輪的圓心座標
     x_g5 = x_g1+ rp_g1 + 2*rp_g2 +2* rp_g3+2*rp_g4+rp_g5
     y_g5= y_g1
+    # 第6齒輪的圓心座標
+    x_g6 = x_g1+ rp_g1 + 2*rp_g2 +2* rp_g3+2*rp_g4+2*rp_g5+rp_g6
+    y_g6= y_g1
 
     # 將第1齒輪順時鐘轉 90 度
     # 使用 ctx.save() 與 ctx.restore() 以確保各齒輪以相對座標進行旋轉繪圖
@@ -643,6 +649,17 @@ class Hello(object):
     # put it back
     ctx.translate(-x_g5, -y_g5)
     spur.Spur(ctx).Gear(x_g5, y_g5, rp_g5, n_g5, pa, "yellow")
+    ctx.restore()
+
+    #齒輪6
+    ctx.save()
+    # translate to the origin of second gear
+    ctx.translate(x_g6, y_g6)
+    # rotate to engage
+    ctx.rotate(-pi/2-pi/n_g6+(pi+pi/n_g5)*n_g5/n_g6)
+    # put it back
+    ctx.translate(-x_g6, -y_g6)
+    spur.Spur(ctx).Gear(x_g6, y_g6, rp_g6, n_g6, pa, "pruple")
     ctx.restore()
 
 
