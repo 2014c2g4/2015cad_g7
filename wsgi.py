@@ -82,9 +82,26 @@ class Hello(object):
     @cherrypy.expose
     def hello(self, toprint="Hello World!"):
         return toprint
-    #@+node:2014fall.20141215194146.1791: *3* index
+    #@+node:.20150519112521.1: *3* index
     @cherrypy.expose
     def index(self, guess=None):
+         outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    </head>
+            <body>
+            第七組齒輪部分<br />
+            <a href="mygeartest2">mygeartest2</a><br />
+            </body>
+            </html>
+     '''
+
+         return outstring
+    #@+node:2014fall.20141215194146.1791: *3* index2
+    @cherrypy.expose
+    def index2(self, guess=None):
         # 將標準答案存入 answer session 對應區
         theanswer = random.randint(1, 100)
         thecount = 0
@@ -636,7 +653,7 @@ class Hello(object):
     # translate to the origin of second gear
     ctx.translate(x_g4, y_g4)
     # rotate to engage
-    ctx.rotate(-pi/2-pi/n_g4+(pi+pi/n_g3)*n_g3/n_g4)
+    ctx.rotate(-pi/2-pi/n_g4+(pi+pi/n_g3)*n_g3/n_g4-(pi+pi/n_g2)*n_g2/n_g4)
     # put it back
     ctx.translate(-x_g4, -y_g4)
     spur.Spur(ctx).Gear(x_g4, y_g4, rp_g4, n_g4, pa, "pink")
@@ -647,7 +664,7 @@ class Hello(object):
     # translate to the origin of second gear
     ctx.translate(x_g5, y_g5)
     # rotate to engage
-    ctx.rotate(-pi/2-pi/n_g5+(pi+pi/n_g4)*n_g4/n_g5)
+    ctx.rotate(-pi/2-pi/n_g5+(pi+pi/n_g4)*n_g4/n_g5-(pi+pi/n_g3)*n_g3/n_g5+(pi+pi/n_g2)*n_g2/n_g5)
     # put it back
     ctx.translate(-x_g5, -y_g5)
     spur.Spur(ctx).Gear(x_g5, y_g5, rp_g5, n_g5, pa, "yellow")
@@ -658,7 +675,8 @@ class Hello(object):
     # translate to the origin of second gear
     ctx.translate(x_g6, y_g6)
     # rotate to engage
-    ctx.rotate(-pi/2-pi/n_g6+(pi+pi/n_g5)*n_g5/n_g6)
+    ctx.rotate(-pi/2-pi/n_g6+(pi+pi/n_g5)*n_g5/n_g6-
+    (pi+pi/n_g4)*n_g4/n_g6+(pi+pi/n_g3)*n_g3/n_g6- (pi+pi/n_g2)*n_g2/n_g6)
     # put it back
     ctx.translate(-x_g6, -y_g6)
     spur.Spur(ctx).Gear(x_g6, y_g6, rp_g6, n_g6, pa, "pruple")
@@ -668,7 +686,7 @@ class Hello(object):
     # 按照上面三個正齒輪的囓合轉角運算, 隨後的傳動齒輪轉角便可依此類推, 完成6個齒輪的囓合繪圖
 
     </script>
-    <canvas id="plotarea" width="1600" height="1200"></canvas>
+    <canvas id="plotarea" width="2500" height="1500"></canvas>
     </body>
     </html>
     '''
