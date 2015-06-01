@@ -1,5 +1,3 @@
-#@+leo-ver=5-thin
-#@+node:2014fall.20141212095015.1775: * @file wsgi.py
 # coding=utf-8
 # 上面的程式內容編碼必須在程式的第一或者第二行才會有作用
 
@@ -7,18 +5,19 @@
 # 導入 cherrypy 模組, 為了在 OpenShift 平台上使用 cherrypy 模組, 必須透過 setup.py 安裝
 
 
-#@@language python
-#@@tabwidth -4
 
-#@+<<declarations>>
-#@+node:2014fall.20141212095015.1776: ** <<declarations>> (wsgi)
 import cherrypy
 # 導入 Python 內建的 os 模組, 因為 os 模組為 Python 內建, 所以無需透過 setup.py 安裝
 import os
 # 導入 random 模組
 import random
+import math
+from cherrypy.lib.static import serve_file
 # 導入 gear 模組
-import gear
+#import gear
+import man
+import man2
+
 
 ################# (2) 廣域變數設定區
 # 確定程式檔案所在目錄, 在 Windows 下有最後的反斜線
@@ -41,9 +40,6 @@ repeat_no = int(input("重複列印幾次?"))
 for i in range(repeat_no):
     print(toprint)
 '''
-#@-<<declarations>>
-#@+others
-#@+node:2014fall.20141212095015.1777: ** class Hello
 ################# (3) 程式類別定義區
 # 以下改用 CherryPy 網際框架程式架構
 # 以下為 Hello 類別的設計內容, 其中的 object 使用, 表示 Hello 類別繼承 object 的所有特性, 包括方法與屬性設計
@@ -61,8 +57,6 @@ class Hello(object):
     'tools.sessions.timeout' : 60
     }
 
-    #@+others
-    #@+node:2014fall.20141212095015.2004: *3* __init__
     def __init__(self):
         # 配合透過案例啟始建立所需的目錄
         if not os.path.isdir(data_dir+'/tmp'):
@@ -71,18 +65,15 @@ class Hello(object):
             os.mkdir(data_dir+"/downloads")
         if not os.path.isdir(data_dir+"/images"):
             os.mkdir(data_dir+"/images")
-    #@+node:2014fall.20141212095015.1778: *3* index_orig
     # 以 @ 開頭的 cherrypy.expose 為 decorator, 用來表示隨後的成員方法, 可以直接讓使用者以 URL 連結執行
     @cherrypy.expose
     # index 方法為 CherryPy 各類別成員方法中的內建(default)方法, 當使用者執行時未指定方法, 系統將會優先執行 index 方法
     # 有 self 的方法為類別中的成員方法, Python 程式透過此一 self 在各成員方法間傳遞物件內容
     def index_orig(self, toprint="Hello World!"):
         return toprint
-    #@+node:2014fall.20141212095015.1779: *3* hello
     @cherrypy.expose
     def hello(self, toprint="Hello World!"):
         return toprint
-    #@+node:.20150519112521.1: *3* index
     @cherrypy.expose
     def index(self, guess=None):
          outstring = '''
@@ -94,12 +85,13 @@ class Hello(object):
             <body>
             第七組齒輪部分<br />
             <a href="mygeartest2">mygeartest2</a><br />
+            <a href="man">man(自動組立)</a><br />
+            <a href="man2">man2(全組分工組立)</a><br />
             </body>
             </html>
      '''
 
          return outstring
-    #@+node:2014fall.20141215194146.1791: *3* index2
     @cherrypy.expose
     def index2(self, guess=None):
         # 將標準答案存入 answer session 對應區
@@ -186,7 +178,6 @@ class Hello(object):
     '''
 
         return outstring
-    #@+node:2015.20150330144929.1713: *3* twoDgear
     @cherrypy.expose
     # N 為齒數, M 為模數, P 為壓力角
     def twoDgear(self, N=20, M=5, P=15):
@@ -214,7 +205,6 @@ class Hello(object):
     '''
 
         return outstring
-    #@+node:2015.20150331094055.1733: *3* threeDgear
     @cherrypy.expose
     # N 為齒數, M 為模數, P 為壓力角
     def threeDgear(self, N=20, M=5, P=15):
@@ -242,7 +232,6 @@ class Hello(object):
     '''
 
         return outstring
-    #@+node:2015.20150330144929.1762: *3* do2Dgear
     @cherrypy.expose
     # N 為齒數, M 為模數, P 為壓力角
     def do2Dgear(self, N=20, M=5, P=15):
@@ -308,7 +297,6 @@ class Hello(object):
     '''
 
         return outstring
-    #@+node:2015.20150331094055.1735: *3* do3Dgear
     @cherrypy.expose
     # N 為齒數, M 為模數, P 為壓力角
     def do3Dgear(self, N=20, M=5, P=15):
@@ -374,7 +362,6 @@ class Hello(object):
     '''
 
         return outstring
-    #@+node:2015.20150330144929.1765: *3* mygeartest
     @cherrypy.expose
     # N 為齒數, M 為模數, P 為壓力角
     def mygeartest(self, N=20, M=5, P=15):
@@ -520,7 +507,6 @@ class Hello(object):
     '''
 
         return outstring
-    #@+node:.20150428191028.1815: *3* mygeartest2
     @cherrypy.expose
     # N 為齒數, M 為模數, P 為壓力角
     def mygeartest2(self , M=15, P=15,N1=7, N2=9,N3=11,N4=13,N5=15 ,N6=17):
@@ -692,7 +678,6 @@ class Hello(object):
     '''
 
         return outstring
-    #@+node:2015.20150331094055.1737: *3* my3Dgeartest
     @cherrypy.expose
     # N 為齒數, M 為模數, P 為壓力角
     def my3Dgeartest(self, N=20, M=5, P=15):
@@ -838,7 +823,6 @@ class Hello(object):
     '''
 
         return outstring
-    #@+node:2014fall.20141215194146.1793: *3* doCheck
     @cherrypy.expose
     def doCheck(self, guess=None):
         # 假如使用者直接執行 doCheck, 則設法轉回根方法
@@ -865,7 +849,6 @@ class Hello(object):
             # 已經猜對, 從 session 取出累計猜測次數
             thecount = cherrypy.session.get('count')
             return "exact: <a href=''>再猜</a>"
-    #@+node:2014fall.20141215194146.1789: *3* guessform
     def guessform(self):
         # 印出讓使用者輸入的超文件表單
         outstring = str(cherrypy.session.get('answer')) + "/" + str(cherrypy.session.get('count')) + '''<form method=POST action=doCheck>
@@ -873,8 +856,6 @@ class Hello(object):
     <input type=submit value=send>
     </form>'''
         return outstring
-    #@-others
-#@-others
 ################# (4) 程式啟動區
 # 配合程式檔案所在目錄設定靜態目錄或靜態檔案
 application_conf = {'/static':{
@@ -890,7 +871,9 @@ application_conf = {'/static':{
     }
 
 root = Hello()
-root.gear = gear.Gear()
+root.man = man.MAN()
+root.man2 = man2.MAN()
+
 
 if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     # 表示在 OpenSfhit 執行
@@ -898,4 +881,3 @@ if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
 else:
     # 表示在近端執行
     cherrypy.quickstart(root, config=application_conf)
-#@-leo
