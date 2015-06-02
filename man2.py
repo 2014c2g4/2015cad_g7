@@ -23,7 +23,7 @@ class MAN(object):
 <a href="http://g720lego-40223120.rhcloud.com/man2/assembly">執行 leg  </a><br /><br />
 <a href="http://150602-week10.rhcloud.com/man2/assembly">執行 hand+arm  </a><br /><br />
 <a href="http://2015cda0512-40223138.rhcloud.com/man2/assembly">執行 head  </a><br /><br />
-<a href="http://cd0427-40223123fall.rhcloud.com/man2/assembly">執行 hat  </a><br /><br />
+<a href="http://cd0427-40223123fall.rhcloud.com/man2/new">執行 hat  </a><br /><br />
 請確定下列零件於 V:/home/lego/man 目錄中, 且開啟空白 Creo 組立檔案.<br />
 <a href="/static/lego_man.7z">lego_man.7z</a>(滑鼠右鍵存成 .7z 檔案)<br />
 '''
