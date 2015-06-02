@@ -20,10 +20,10 @@ class MAN(object):
 這是 2015CDA 協同專案下的 cdag7模組下的 MAN 類別.<br /><br />
 <!-- 這裡採用相對連結, 而非網址的絕對連結 (這一段為 html 註解) -->
 <a href="http://legog739-40223139.rhcloud.com/man2/assembly">執行  body</a><br /><br />
-<a href="http://150602-week10.rhcloud.com/man2/assembly">執行 hand+arm  </a><br /><br />
 <a href="http://g720lego-40223120.rhcloud.com/man2/assembly">執行 leg  </a><br /><br />
+<a href="http://150602-week10.rhcloud.com/man2/assembly">執行 hand+arm  </a><br /><br />
 <a href="http://2015cda0512-40223138.rhcloud.com/man2/assembly">執行 head  </a><br /><br />
-<a href="http://cd0427-40223123fall.rhcloud.com/man2/assembly">">執行 hat  </a><br /><br />
+<a href="http://cd0427-40223123fall.rhcloud.com/man2/assembly">執行 hat  </a><br /><br />
 請確定下列零件於 V:/home/lego/man 目錄中, 且開啟空白 Creo 組立檔案.<br />
 <a href="/static/lego_man.7z">lego_man.7z</a>(滑鼠右鍵存成 .7z 檔案)<br />
 '''
