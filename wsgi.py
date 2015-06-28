@@ -1205,7 +1205,8 @@ class Hello(object):
         <option>79</option>
         <option>80</option>
         </select>
-
+    <input type=submit value=send>
+    </form>
 
     <!-- 以下為 canvas 畫圖程式 -->
     <script type="text/python">

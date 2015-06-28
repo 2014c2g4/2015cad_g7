@@ -897,7 +897,8 @@ def gear2(self , M=10, P=15,N1=15, N2=24,N3=15,N4=24 ,N5=15,N6=24):
     &lt;option&gt;79&lt;/option&gt;
     &lt;option&gt;80&lt;/option&gt;
     &lt;/select&gt;
-
+&lt;input type=submit value=send&gt;
+&lt;/form&gt;
 
 &lt;!-- 以下為 canvas 畫圖程式 --&gt;
 &lt;script type="text/python"&gt;
